@@ -2,3 +2,8 @@
 enableConstraintUndo(State)
 newFTrace(Vp, Nl)
 nlerp(Q0, Q1, T)
+
+qi()
+pi()
+parentBone(This)
+
