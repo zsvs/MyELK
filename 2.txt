@@ -1,0 +1,3 @@
+﻿holoAlpha(Index, Alpha)
+entity()
+vec4()
