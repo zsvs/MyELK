@@ -3,7 +3,7 @@ services:
   es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
     container_name: es01
-    hostname: elasticsearch_host
+    hostname: elasticsearch_host_01
     environment:
       - node.name=es01
       - cluster.name=es-docker-cluster
@@ -25,6 +25,7 @@ services:
   es02:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
     container_name: es02
+    hostname: elasticsearch_host_02
     environment:
       - node.name=es02
       - cluster.name=es-docker-cluster
@@ -49,9 +50,9 @@ services:
     environment:
       ELASTICSEARCH_URL: http://es01:9200
       ELASTICSEARCH_HOSTS: '["http://es01:9200","http://es02:9200"]'
-    depends_on: 
+    depends_on:
       - es01
-    networks: 
+    networks:
       - elastic
 
 networks:
@@ -63,3 +64,5 @@ volumes:
     driver: local
   data02:
     driver: local
+
+#TODO: Add filebeat and logstash
